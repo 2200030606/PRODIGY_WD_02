@@ -1,0 +1,203 @@
+body {
+    background-image: url(images/bgimg.png); /* Default background for larger screens */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-left: 100px;
+    font-family: Arial, sans-serif; /* Default font family */
+}
+
+/* Change font for numbers */
+.card-container, .time-card, .lap-card {
+    font-family: "Times New Roman", Times, serif; /* Change to desired font */
+    font-size: 29px;
+}
+
+.card-container {
+    background-color: #d11212;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.time-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Add margin-top for spacing */
+}
+
+.button-85 {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #d11212;
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d8d8dd;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.stopwatch {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+}
+
+.laps-list {
+    padding: 10px;
+}
+
+.lap-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .card-container, .time-card, .lap-card {
+        font-size: 26px;
+        padding: 15px;
+    }
+    
+    .button-85 {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-container, .time-card, .lap-card {
+        font-size: 24px;
+        padding: 15px;
+    }
+    
+    .button-85 {
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container, .time-card, .lap-card {
+        font-size: 22px;
+        padding: 10px;
+    }
+    
+    .button-85 {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container, .time-card, .lap-card {
+        font-size: 20px;
+        padding: 8px;
+    }
+    
+    .button-85 {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-image: url(images/bgimg5.png);
+        justify-content: flex-start; /* Align items to the top */
+    }
+
+    .card-container, .time-card, .lap-card {
+        font-size: 18px;
+        padding: 5px;
+    }
+    
+    .button-85 {
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+
+    .card-container {
+        background-color: #d11212;
+        margin-bottom: 10px; /* Adjust margin to create space between elements */
+    }
+
+    .buttons {
+        margin-bottom: 20px; /* Ensure space between buttons and other content */
+    }
+}
